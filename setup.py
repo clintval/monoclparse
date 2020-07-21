@@ -14,7 +14,7 @@ def this_version() -> str:
     """Read the variable `__version__` from the module itself."""
     contents = Path('monoclparse/_version.py').read_text()
     *_, version = contents.strip().split()
-    return version
+    return version.strip('\'')
 
 
 setuptools.setup(
